@@ -1,0 +1,27 @@
+<div class="post_wrapper">
+
+	<h1> "Motherfucker Cup Winners" </h1>
+	<h2>
+		<ol>Ed 1 → CHELSEA – Miller</ol>
+		<ol>Ed 2 → MILAN – Julian</ol>
+		<ol>Ed 3 → REAL MADRID – Miller</ol>
+		<ol>Ed 4 → REAL MADRID – Andres</ol>
+		<ol>Ed 5 → REAL MADRID – Andres</ol>
+		<ol>Ed 6 → JUVENTUS – Jose</ol>
+		<ol>Ed 7 → CHELSEA - Miller</ol>
+		<ol>Ed 8 → ?</ol>
+          <div class="buttons">
+            <button class="button"> <%= link_to "Responder próximo campeón", new_post_path %> </button>
+          </div>
+	</h2>
+
+	<h3>
+		<% @posts.each do |post| %>
+			<div class="post_wrapper">
+				<h2 class="title"><%= link_to post.title, post %></h2>
+				<p class="body"><%= truncate(post.body, length:100) %>
+				<p class="date"><%= time_ago_in_words(post.created_at) %> ago </p>
+			</div>
+		<% end %>
+	</h3>
+</div>
